@@ -20,7 +20,7 @@ services:
          - "8080:8080"
       networks: 
          - skynet
-      command: ["./exec.sh", "java", "-jar", "app.jar"]
+      command: ["./exec.sh", "mvn", "verify"]
 
 networks:
    skynet:

@@ -2,9 +2,9 @@ pipeline{
 	agent any
 	
 	stages {
-		stage("Build and Test"){
+		stage("Build docker"){
 			steps {
-				sh "mvn verify"
+				sh "docker-compose up"
 			
 			}
 		
