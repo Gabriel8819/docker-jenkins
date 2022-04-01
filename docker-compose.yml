@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+   mysqldb:
+      container_name: mysqldb
+      image: mysql:latest
+      environment:
+         - MYSQL_ROOT_PASSWORD=123456
+         - MYSQL_USER=gabriel
+         - MYSQL_PASSWORD=123456
+         - MYSQL_DATABASE=spring
+      networks:
+         - skynet 
+   webapp:
+      container_name: webapp
+      build: .
+      image: myapp
+      depends_on:
+         - mysqldb
+      ports:
+         - "8080:8080"
+      networks: 
+         - skynet
+      command: ["./exec.sh", "java", "-jar", "app.jar"]
+
+networks:
+   skynet:
+      driver: bridge
+
+
+
+
+
