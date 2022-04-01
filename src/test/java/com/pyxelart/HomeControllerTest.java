@@ -29,7 +29,7 @@ public class HomeControllerTest {
 		
 		this.mockMvc.perform(get("/user"))
 			.andExpect(status().isOk())
-			.andExpect(content().string(containsString("success test")));
+			.andExpect(content().string(containsString("success")));
 		
 		
 		
