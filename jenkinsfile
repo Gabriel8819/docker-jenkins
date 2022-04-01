@@ -2,24 +2,15 @@ pipeline{
 	agent any
 	
 	stages {
-		stage("Build"){
+		stage("Build and Test"){
 			steps {
-				echo "Building"
+				mvn verify
 			
 			}
 		
 		}
 		
-		stage("Test"){
-			steps {
-				echo "testing"
-			
-			
-			
-			}
 		
-		
-		}
 		
 	
 	
